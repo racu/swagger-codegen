@@ -1,0 +1,14 @@
+module {{package}}{
+  {{#operations}}
+ export public interface {{classname}} {
+    {{#operation}}
+    {{#errorList}} //error info- code: {{code}} reason: "{{reason}}" model: {{#responseModel}}{{responseModel}}
+    {{/responseModel}}{{^responseModel}}<none>
+    {{/responseModel}}
+    {{/errorList}}
+    {{#returnType}}Promise<{{{returnType}}}> {{/returnType}}{{^returnType}}Promise {{/returnType}}{{nickname}} ({{#allParams}} {{paramName}}:{{{dataType}}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
+    {{/operation}}
+  }
+  {{/operations}}
+
+}

@@ -1,0 +1,7 @@
+module {{modelPackage}}{
+  {{#uniqueEnums}}
+   export enum {{datatypeWithEnum}} {
+      {{#allowableValues}}{{#values}} {{.}}=<any>'{{.}}', {{/values}}{{/allowableValues}}
+   };
+  {{/uniqueEnums}}
+}

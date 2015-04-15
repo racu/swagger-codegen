@@ -1,0 +1,15 @@
+module {{package}}{
+  {{#models}}
+  {{#model}}{{#description}}
+  /**
+   * {{description}}
+   **/{{/description}}
+  //{{{description}}}
+  export interface {{classname}} {{#parent}}extends {{{parent}}}{{/parent}} {
+    {{#vars}}{{#isEnum}}{{name}} :  {{{datatypeWithEnum}}};{{/isEnum}}
+    {{^isEnum}}{{name}} : {{{datatype}}};{{/isEnum}}
+    {{/vars}}
+  }
+  {{/model}}
+  {{/models}}
+}
